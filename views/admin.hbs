@@ -1,0 +1,41 @@
+<h1 class="text-center">Skate Park</h1>
+
+    <div class="py-4">
+      <h2 class="text-center">Administración</h2>
+      
+
+      <table class="table w-50 m-auto">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each users}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>
+          <div style="background-image: url({{this.image}});"></div>
+        </td>
+        <td>{{this.name}}</td>
+        <td>{{this.experience}}</td>
+        <td>{{this.especialty}}</td>
+        <td>
+           {{#if this.status}}
+          <input type="checkbox" checked onclick="changeStatus({{this.id}}, this)">
+          {{else}}
+          <input type="checkbox" onclick="changeStatus({{this.id}}, this)">
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="/js/admin.js"></script>

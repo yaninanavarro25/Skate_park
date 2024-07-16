@@ -1,0 +1,42 @@
+<h2 class="text-center my-5">Lista de participantes</h2>
+
+<div class="container">
+  <table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Años de Experiencia</th>
+        <th scope="col">Especialidad</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#if users}}
+
+        {{#each users}}
+          <tr>
+            <th scope="row">{{@index}}</th>
+            <td><img
+                class="img-skater"
+                src={{this.image}}
+                alt="{{this.name}}"
+              /></td>
+            <td>{{this.name}}</td>
+            <td>{{this.experience}}</td>
+            <td>{{this.especialty}}</td>
+            <td>{{#if this.status}}<p
+                  class="text-success fw-bold"
+                >Aprobado</p>{{else}}<p class="text-warning fw-bold">En revisión</p>{{/if}}</td>
+          </tr>
+        {{/each}}
+
+      {{else}}
+        <tr>
+          <td colspan="6">No hay datos</td>
+        </tr>
+      {{/if}}
+    </tbody>
+  </table>
+</div>

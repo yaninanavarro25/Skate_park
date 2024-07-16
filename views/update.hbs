@@ -1,0 +1,53 @@
+ <h1 class="text-center">Skate Park</h1>
+
+    <div class="col-md-4 mx-auto">
+    <h2 class="text-center">Datos de Perfil </h2>
+    <form id="form-update">
+        <input id="update-id" type="hidden" name="id" value="{{user.id}}">
+    <div>
+        {{#if errors}}
+        <div>
+            {{#each errors}}
+            <div class="alert alert-danger" role="alert">
+                {{this.msg}}
+            </div>
+            {{/each}}
+        </div>
+       {{/if}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-control" type="text" name="name" id="name" placeholder="Ej. John Doe" value="{{user.name}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="text" name="email" id="email" placeholder="Ej. WcWp2@example.com" value="{{user.email}}" disabled>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="experience">Años de Experiencia</label>
+        <input class="form-control" type="number" name="experience" id="experience" placeholder="Ej. 5" value="{{user.experience}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="especialty">Especialidad</label>
+        <input class="form-control" type="text" name="especialty" id="especialty" placeholder="Ej. Snowboarder" value="{{user.especialty}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="Ej. ********" >
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="confirm_password">Confirm Password</label>
+        <input class="form-control" type="password" name="confirm_password" id="confirm_password" placeholder="Ej. ********">
+    </div>
+    
+    <div class="d-flex justify-content-between gap-5"> 
+        <button class="btn btn-primary" id="updateBtn">Actualizar</button>
+         <button class="btn btn-danger" id="deleteBtn">Eliminar cuenta</button>
+        
+    </div>
+    
+    </form>
+</div>
+
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>
